@@ -1,3 +1,13 @@
-<p>
-  show-search works!
-</p>
+<input #newHero>
+
+<button (click)="performSearch(newHero.value)">Search</button>
+<hr>
+<div class="container-fluid">
+  Show List:
+  <table class="table">
+    <tr *ngFor="let show of showList">
+      <td>{{show.show.name}}</td>
+      <td><span [innerHTML]="show.show.summary"></span></td>
+    </tr>
+  </table>
+</div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ShowSearchService} from '../services/show-search.service';
 
 @Component({
   selector: 'app-show-search',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowSearchComponent implements OnInit {
 
-  constructor() { }
+  public showList;
+
+  constructor(private showSearchService: ShowSearchService) {
+  }
 
   ngOnInit() {
+
+  }
+
+  performSearch(title: string) {
+    console.log('searching for ' + title);
+    this.showSearchService.performShowSearch(title).subscribe(data => {
+      this.showList = data;
+    });
   }
 
 }
