@@ -14,7 +14,8 @@
                                                    class="img-thumbnail"></span>
         <span *ngIf="show.show.image == null"><img src="/assets/img_na.png" alt="Image" class="img-thumbnail"></span>
       </td>
-      <td scope="row">{{show.show.name}}</td>
+      <td scope="row"><a [routerLink]="['/showDetail',show.show.id]" routerLinkActive="active">{{show.show.name}}</a>
+      </td>
       <td><span [innerHTML]="show.show.summary"></span></td>
     </tr>
   </table>

@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ShowSearchServiceService } from './show-search.service';
+import { ShowSearchServiceService } from './show.service';
 
 describe('ShowSearchServiceService', () => {
   beforeEach(() => {

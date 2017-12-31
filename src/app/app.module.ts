@@ -6,20 +6,22 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
 import {ShowSearchComponent} from './show-search/show-search.component';
-import {ShowSearchService} from './services/show-search.service';
+import {ShowService} from './services/show.service';
+import { ShowDetailComponent } from './show-detail/show-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowSearchComponent
+    ShowSearchComponent,
+    ShowDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ShowSearchService],
+  providers: [ShowService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
