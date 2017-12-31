@@ -10,7 +10,7 @@ export class ShowSearchService {
   }
 
   public performShowSearch(title: string): Observable<any> {
-    return this.http.get('http://api.tvmaze.com/search/shows?q=' + title);
+    return this.http.get('https://api.tvmaze.com/search/shows?q=' + title);
   }
 }
 
