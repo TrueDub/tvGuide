@@ -7,10 +7,14 @@
   </form>
 </div>
 <div class="container-fluid">
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered table-striped table-sm">
     <tr *ngFor="let show of showList">
-      <td><img src="{{show.show.image.medium}}" alt="Image" class="img-thumbnail"></td>
-      <td>{{show.show.name}}</td>
+      <td>
+        <span *ngIf="show.show.image != null"><img src="{{show.show.image.medium}}" alt="Image"
+                                                   class="img-thumbnail"></span>
+        <span *ngIf="show.show.image == null"><img src="/assets/img_na.png" alt="Image" class="img-thumbnail"></span>
+      </td>
+      <td scope="row">{{show.show.name}}</td>
       <td><span [innerHTML]="show.show.summary"></span></td>
     </tr>
   </table>
