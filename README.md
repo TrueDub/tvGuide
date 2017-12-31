@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
 
+## Try it out
+
+Periodically I'll publish the working site to [https://truedub.github.io/tvGuide](https://truedub.github.io/tvGuide) - note that will not always match the source.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
