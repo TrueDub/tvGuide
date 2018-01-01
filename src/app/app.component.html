@@ -1,9 +1,40 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <h4>powered by <a href="https://www.tvmaze.com">TV Maze</a></h4>
-</div>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="active">TV Guide</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<router-outlet></router-outlet>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Home</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Show Title" aria-label="Search" #showName>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="performSearch(showName.value)">
+          Search
+        </button>
+      </form>
+
+      <!--      <form class="form-inline center-box">
+              <div class="mx-auto">
+                <input type="text" class="form-control form-control-lg mb-2 mr-sm-2" placeholder="Show Name" #showName>
+                <button type="button" class="btn btn-primary btn-lg mb-2" (click)="performSearch(showName.value)">Search
+                </button>
+              </div>
+            </form>-->
+
+
+    </div>
+  </nav>
+</header>
+<main role="main" class="container-fluid">
+  <router-outlet></router-outlet>
+</main>
+<footer class="footer">
+  <div class="container"><span class="text-muted center">powered by <a href="https://www.tvmaze.com">TV Maze</a></span>
+  </div>
+</footer>

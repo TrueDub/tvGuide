@@ -1,3 +1,9 @@
-<p>
-  {{showDetail}}
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5"><span *ngIf="showDetail.image != null"><img src="{{showDetail.image.original}}" alt="Image"
+                                                                      class="img-fluid"></span>
+      <span *ngIf="showDetail.image == null"><img src="/assets/img_na.png" alt="No Image" class="img-fluid"></span>
+    </div>
+    <div class="col-md-7"><h1>{{showDetail.name}}</h1></div>
+  </div>
+</div>

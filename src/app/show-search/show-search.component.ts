@@ -10,18 +10,11 @@ export class ShowSearchComponent implements OnInit {
 
   public showList;
 
-  constructor(private showSearchService: ShowService) {
+  constructor() {
   }
 
   ngOnInit() {
 
-  }
-
-  performSearch(title: string) {
-    console.log('searching for ' + title);
-    this.showSearchService.performShowSearch(title).subscribe(data => {
-      this.showList = data;
-    });
   }
 
 }

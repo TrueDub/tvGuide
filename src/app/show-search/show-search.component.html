@@ -1,22 +1,4 @@
-<div>
-  <form class="form-inline center-box">
-    <div class="mx-auto">
-      <input type="text" class="form-control form-control-lg mb-2 mr-sm-2" placeholder="Show Name" #newHero>
-      <button type="button" class="btn btn-primary btn-lg mb-2" (click)="performSearch(newHero.value)">Search</button>
-    </div>
-  </form>
-</div>
-<div class="container-fluid">
-  <table class="table table-bordered table-striped table-sm">
-    <tr *ngFor="let show of showList">
-      <td>
-        <span *ngIf="show.show.image != null"><img src="{{show.show.image.medium}}" alt="Image"
-                                                   class="img-thumbnail"></span>
-        <span *ngIf="show.show.image == null"><img src="/assets/img_na.png" alt="Image" class="img-thumbnail"></span>
-      </td>
-      <td scope="row"><a [routerLink]="['/showDetail',show.show.id]" routerLinkActive="active">{{show.show.name}}</a>
-      </td>
-      <td><span [innerHTML]="show.show.summary"></span></td>
-    </tr>
-  </table>
+<div class="center">
+  Welcome to TV Guide, powered by the data supplied by <a href="https://www.tvmaze.com">TV Maze</a>. Please use the
+  search box above.
 </div>
