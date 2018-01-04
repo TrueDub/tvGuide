@@ -6,7 +6,8 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 @Injectable()
 export class ShowService {
 
-  private searchDataSource = new BehaviorSubject<any>('{}');
+  private empty: any[] = [];
+  private searchDataSource = new BehaviorSubject<any>(this.empty);
   searchData = this.searchDataSource.asObservable();
 
   constructor(private http: HttpClient) {
@@ -20,6 +21,10 @@ export class ShowService {
 
   public performShowLookup(id: string): Observable<any> {
     return this.http.get('https://api.tvmaze.com/shows/' + id);
+  }
+
+  public performEpisodesLookup(id: string): Observable<any> {
+    return this.http.get('https://api.tvmaze.com/shows/' + id + '/episodes');
   }
 }
 

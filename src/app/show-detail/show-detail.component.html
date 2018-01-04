@@ -23,6 +23,25 @@
           </td>
         </tr>
       </table>
+      <h3>Episode List</h3>
+      <!-- Future: add accordion, possibly lazy-load the data -->
+      <div *ngFor="let season of seasonArray">
+        <h5>Season {{season[0].season}}</h5>
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>N</th>
+            <th>Title</th>
+            <th>First Aired</th>
+            <th>Summary</th>
+          </tr>
+          <tr *ngFor="let episode of season">
+            <td>{{episode.episodeNumber}}</td>
+            <td>{{episode.name}}</td>
+            <td>{{episode.firstAiredDate}}</td>
+            <td><span [innerHTML]="episode.summary"></span></td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>

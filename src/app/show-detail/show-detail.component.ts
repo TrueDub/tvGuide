@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {ShowService} from '../services/show.service';
+import {Episode} from '../classes/episode';
 
 @Component({
   selector: 'app-show-detail',
@@ -9,12 +11,34 @@ import {ActivatedRoute} from '@angular/router';
 export class ShowDetailComponent implements OnInit {
 
   showDetail;
+  seasonArray = [];
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private showService: ShowService) {
   }
 
   ngOnInit() {
     this.showDetail = this.route.snapshot.data['showDetail'];
+    this.showService.performEpisodesLookup(this.showDetail.id).subscribe(data => {
+      const episodeList = {};
+      data.forEach(eppData => {
+        const episode = new Episode();
+        episode.season = eppData.season;
+        episode.episodeNumber = eppData.number;
+        episode.name = eppData.name;
+        episode.firstAiredDate = eppData.airdate;
+        episode.summary = eppData.summary;
+        if (episodeList.hasOwnProperty(episode.season)) {
+          episodeList[episode.season].push(episode);
+        } else {
+          const tempArray: Episode[] = [episode];
+          episodeList[episode.season] = tempArray;
+        }
+      });
+      for (const i in episodeList) {
+        if (episodeList.hasOwnProperty(i)) {
+          this.seasonArray.push(episodeList[i]);
+        }
+      }
+    });
   }
-
 }

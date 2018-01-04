@@ -8,7 +8,7 @@ import {ShowService} from '../services/show.service';
 })
 export class ShowSearchResultsComponent implements OnInit {
 
-  showList;
+  public showList;
 
   constructor(private showSearchService: ShowService) {
   }
