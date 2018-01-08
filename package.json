@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:prod": "ng build --prod -aot --base-href=https://truedub.github.io/tvGuide/",
+    "build:prod": "ng build --prod -aot --output-path docs --base-href tvGuide",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
